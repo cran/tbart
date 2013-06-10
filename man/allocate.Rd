@@ -1,0 +1,50 @@
+\name{allocate}
+\alias{allocate}
+\title{Teitz-Bart algorithm applied to Spatial* and Spatial*DataFrame objects - report allocations}
+\usage{
+  allocate(swdf1, swdf2, p, metric, verbose = FALSE)
+}
+\arguments{
+  \item{swdf1}{- first Spatial* or Spatial*DataFrame
+  objects}
+
+  \item{swdf2}{- second Spatial* or Spatial*DataFrame
+  objects (if omitted, defaults to the same value as
+  \code{swdf1})}
+
+  \item{p}{- either a guess at the initial \eqn{p}-median
+  set of a single integer indicating the size of the set
+  (which is then chosen randomly)}
+
+  \item{metric}{- the distance matrix (defaults to
+  Euclidean computed via \code{euc.dists(swdf1,swdf2)} if
+  not supplied)}
+
+  \item{verbose}{- if TRUE print out each swap in the
+  algorithm (default is FALSE)}
+}
+\value{
+  List of nearest neigbour indices for each element from
+  the \eqn{p}-median set
+}
+\description{
+  Teitz-Bart algorithm applied to Spatial* and
+  Spatial*DataFrame objects - report allocations
+}
+\examples{
+data(meuse)
+coordinates(meuse) <- ~x+y
+allocate(meuse,p=5)
+
+
+
+require(RColorBrewer)
+require(GISTools)
+data(georgia)
+allocations.list <- allocate(georgia2,p=5)
+zones <- gUnaryUnion(georgia2,allocations.list)
+plot(zones,col=brewer.pal(5,"Accent"))
+plot(georgia2,border=rgb(0,0,0,0.1),add=TRUE)
+points(coordinates(georgia2)[allocations.list,],pch=16,cex=2,col=rgb(1,0.5,0.5,0.1))
+}
+

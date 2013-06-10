@@ -1,0 +1,31 @@
+\name{euc.dists}
+\alias{euc.dists}
+\title{Euclidean distances from a Spatial* or Spatial*DataFrame object}
+\usage{
+  euc.dists(swdf1, swdf2, scale)
+}
+\arguments{
+  \item{swdf1}{- First Spatial*DataFrame object}
+
+  \item{swdf2}{- Second Spatial*DataFrame object (if
+  omitted, defaults to the same value as \code{swdf1})}
+
+  \item{scale}{- allows re-scaling eg: value of 1000 means
+  distances in km if coordinates of
+  \code{swdf1}/\code{swdf2} in meters.}
+}
+\value{
+  Distance matrix (if \code{swdf1} or \code{swdf2} not
+  SpatialPoints*, distances are based on points obtained
+  from \code{coordinates} function)
+}
+\description{
+  Euclidean distances from a Spatial* or Spatial*DataFrame
+  object
+}
+\examples{
+data(meuse)
+coordinates(meuse) <- ~x+y
+euc.dists(meuse,scale=1000)
+}
+

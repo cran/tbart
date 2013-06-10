@@ -1,0 +1,29 @@
+\name{tb.raw}
+\alias{tb.raw}
+\title{Teitz-Bart algorithm applied to a 'raw' distance matrix}
+\usage{
+  tb.raw(d, guess, verbose = FALSE)
+}
+\arguments{
+  \item{d}{- A distance matrix (not necessarily Euclidean)}
+
+  \item{guess}{- a guess at the set of p points
+  constituting the \eqn{p}-median}
+
+  \item{verbose}{- if TRUE print out each swap in the
+  algorithm (default is FALSE)}
+}
+\value{
+  Set of point indices for \eqn{p}-median (may be local
+  optimum)
+}
+\description{
+  Teitz-Bart algorithm applied to a 'raw' distance matrix
+}
+\examples{
+x1 <- rnorm(100)
+y1 <- rnorm(100)
+d <- as.matrix(dist(cbind(x1,y1)))
+tb.raw(d,c(1,2))
+}
+
