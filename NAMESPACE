@@ -1,2 +1,3 @@
 useDynLib(tbart)
 exportPattern("^[[:alpha:]]+")
+import(sp,Rcpp)

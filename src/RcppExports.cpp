@@ -9,46 +9,66 @@ using namespace Rcpp;
 NumericMatrix dmat(NumericVector x1, NumericVector x2, NumericVector y1, NumericVector y2);
 RcppExport SEXP tbart_dmat(SEXP x1SEXP, SEXP x2SEXP, SEXP y1SEXP, SEXP y2SEXP) {
 BEGIN_RCPP
-    Rcpp::RNGScope __rngScope;
-    NumericVector x1 = Rcpp::as<NumericVector >(x1SEXP);
-    NumericVector x2 = Rcpp::as<NumericVector >(x2SEXP);
-    NumericVector y1 = Rcpp::as<NumericVector >(y1SEXP);
-    NumericVector y2 = Rcpp::as<NumericVector >(y2SEXP);
-    NumericMatrix __result = dmat(x1, x2, y1, y2);
-    return Rcpp::wrap(__result);
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< NumericVector >::type x1(x1SEXP );
+        Rcpp::traits::input_parameter< NumericVector >::type x2(x2SEXP );
+        Rcpp::traits::input_parameter< NumericVector >::type y1(y1SEXP );
+        Rcpp::traits::input_parameter< NumericVector >::type y2(y2SEXP );
+        NumericMatrix __result = dmat(x1, x2, y1, y2);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
 END_RCPP
 }
 // rviss
 IntegerVector rviss(NumericMatrix dm, IntegerVector ss);
 RcppExport SEXP tbart_rviss(SEXP dmSEXP, SEXP ssSEXP) {
 BEGIN_RCPP
-    Rcpp::RNGScope __rngScope;
-    NumericMatrix dm = Rcpp::as<NumericMatrix >(dmSEXP);
-    IntegerVector ss = Rcpp::as<IntegerVector >(ssSEXP);
-    IntegerVector __result = rviss(dm, ss);
-    return Rcpp::wrap(__result);
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< NumericMatrix >::type dm(dmSEXP );
+        Rcpp::traits::input_parameter< IntegerVector >::type ss(ssSEXP );
+        IntegerVector __result = rviss(dm, ss);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
 END_RCPP
 }
 // dtotal
 double dtotal(NumericMatrix dm, IntegerVector ss);
 RcppExport SEXP tbart_dtotal(SEXP dmSEXP, SEXP ssSEXP) {
 BEGIN_RCPP
-    Rcpp::RNGScope __rngScope;
-    NumericMatrix dm = Rcpp::as<NumericMatrix >(dmSEXP);
-    IntegerVector ss = Rcpp::as<IntegerVector >(ssSEXP);
-    double __result = dtotal(dm, ss);
-    return Rcpp::wrap(__result);
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< NumericMatrix >::type dm(dmSEXP );
+        Rcpp::traits::input_parameter< IntegerVector >::type ss(ssSEXP );
+        double __result = dtotal(dm, ss);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
 END_RCPP
 }
 // bestswap
 IntegerVector bestswap(NumericMatrix dm, IntegerVector ins, IntegerVector outs);
 RcppExport SEXP tbart_bestswap(SEXP dmSEXP, SEXP insSEXP, SEXP outsSEXP) {
 BEGIN_RCPP
-    Rcpp::RNGScope __rngScope;
-    NumericMatrix dm = Rcpp::as<NumericMatrix >(dmSEXP);
-    IntegerVector ins = Rcpp::as<IntegerVector >(insSEXP);
-    IntegerVector outs = Rcpp::as<IntegerVector >(outsSEXP);
-    IntegerVector __result = bestswap(dm, ins, outs);
-    return Rcpp::wrap(__result);
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< NumericMatrix >::type dm(dmSEXP );
+        Rcpp::traits::input_parameter< IntegerVector >::type ins(insSEXP );
+        Rcpp::traits::input_parameter< IntegerVector >::type outs(outsSEXP );
+        IntegerVector __result = bestswap(dm, ins, outs);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
 END_RCPP
 }
