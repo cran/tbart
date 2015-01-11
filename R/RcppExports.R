@@ -5,6 +5,10 @@
     .Call('tbart_dmat', PACKAGE = 'tbart', x1, x2, y1, y2)
 }
 
+.dmatex <- function(x1, x2, y1, y2, pwr) {
+    .Call('tbart_dmatex', PACKAGE = 'tbart', x1, x2, y1, y2, pwr)
+}
+
 .rviss <- function(dm, ss) {
     .Call('tbart_rviss', PACKAGE = 'tbart', dm, ss)
 }
@@ -15,5 +19,9 @@
 
 .bestswap <- function(dm, ins, outs) {
     .Call('tbart_bestswap', PACKAGE = 'tbart', dm, ins, outs)
+}
+
+.bestswap2 <- function(dm, ins, outs, n_force) {
+    .Call('tbart_bestswap2', PACKAGE = 'tbart', dm, ins, outs, n_force)
 }
 

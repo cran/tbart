@@ -1,11 +1,12 @@
 ##' Teitz and Bart's \eqn{p}-median problem with Spatial* and Spatial*DataFrame objects
+##' 
 ##' \tabular{ll}{
 ##'  Package: \tab tbart\cr
 ##'  Type: \tab Package\cr
-##'  Version: \tab 0.9\cr
-##'  Date: \tab 2013-06-13\cr
+##'  Version: \tab 1.0\cr
+##'  Date: \tab 2015-02-12\cr
 ##'  License: \tab GPL (>= 2)\cr
-##'  Maintainer: \tab Chris Brunsdon \url{mailto:brunsdon@@liverpool.ac.uk} \cr
+##'  Maintainer: \tab Chris Brunsdon \url{mailto:christopher.brunsdon@@nuim.ie} \cr
 ##'}
 ##'
 ##'
